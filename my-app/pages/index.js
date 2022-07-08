@@ -481,7 +481,7 @@ export default function Home() {
     </div>
   </div>
   <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-    <img className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full" src="../background.png" alt=""/>
+    <Image className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full" src="../background.png" alt=""/>
   </div>
  
 </div>
@@ -494,26 +494,26 @@ export default function Home() {
 
        
           wholeList.map((item,index)=>{
-            return <div class="drop-shadow-10xl shadow-md shadow-white-300 mb-3 max-w-sm bg-white rounded-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
-            <div class="flex justify-end px-4 pt-4">
+            return <div className="drop-shadow-10xl shadow-md shadow-white-300 mb-3 max-w-sm bg-white rounded-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+            <div className="flex justify-end px-4 pt-4">
                
               
                 
             </div>
-            <div class="px-2 max-w-sm bg-white rounded-bl-4xl rounded-tr-4xl shadow-md dark:bg-gray-800 dark:border-gray-700">
+            <div className="px-2 max-w-sm bg-white rounded-bl-4xl rounded-tr-4xl shadow-md dark:bg-gray-800 dark:border-gray-700">
     <a href="#">
-        <img class="p-2 rounded-bl-3xl rounded-tr-3xl " src={item.image} alt="nft image" />
+        <Image className="p-2 rounded-bl-3xl rounded-tr-3xl " src={item.image} alt="nft image" />
     </a>
-    <div class="px-5">
+    <div className="px-5">
         <a href="#">
-            <h5 class=" mb-3 text-center flex-center text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">{item.song}</h5>
-            <h6 class="text-center text-xl font-semibold tracking-tight text-orange-600">by {item.artist}</h6>
-            <h6 class="text-center text font- tracking-tight text-gray-900 dark:text-white">floor price: {item.price} eth</h6>
+            <h5 className=" mb-3 text-center flex-center text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">{item.song}</h5>
+            <h6 className="text-center text-xl font-semibold tracking-tight text-orange-600">by {item.artist}</h6>
+            <h6 className="text-center text font- tracking-tight text-gray-900 dark:text-white">floor price: {item.price} eth</h6>
         </a>
        
-        <div class="flex justify-between items-center">
-            <span class="text-3xl font-bold text-gray-900 dark:text-white"></span>
-            <a href="https://opensea.io/collection/boredapeyachtclub" class="text-white bg-blue-200 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">BUY</a>
+        <div className="flex justify-between items-center">
+            <span className="text-3xl font-bold text-gray-900 dark:text-white"></span>
+            <a href="https://opensea.io/collection/boredapeyachtclub" className="text-white bg-blue-200 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">BUY</a>
         </div>
 </div>
             </div>
