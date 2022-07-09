@@ -5,7 +5,6 @@ import Web3Modal from "web3modal";
 import { abi, NFT_CONTRACT_ADDRESS } from "../constants";
 import styles from "../styles/Home.module.css";
 import Image from 'next/image';
-
 export default function Home() {
   // walletConnected keep track of whether the user's wallet is connected or not
   const [walletConnected, setWalletConnected] = useState(false);
@@ -38,8 +37,8 @@ export default function Home() {
       );
       // call the presaleMint from the contract, only whitelisted addresses would be able to mint
       const tx = await whitelistContract.presaleMint({
-        // value signifies the cost of one crypto dev which is "0.0001" eth.
-        // We are parsing `0.0001` string to ether using the utils library from ethers.js
+        // value signifies the cost of one crypto dev which is "0.01" eth.
+        // We are parsing `0.01` string to ether using the utils library from ethers.js
         value: utils.parseEther("0.01"),
       });
       setLoading(true);
@@ -68,8 +67,8 @@ export default function Home() {
       );
       // call the mint from the contract to mint the Crypto Dev
       const tx = await whitelistContract.mint({
-        // value signifies the cost of one crypto dev which is "0.0001" eth.
-        // We are parsing `0.0001` string to ether using the utils library from ethers.js
+        // value signifies the cost of one crypto dev which is "0.01" eth.
+        // We are parsing `0.01` string to ether using the utils library from ethers.js
         value: utils.parseEther("0.01"),
       });
       setLoading(true);
@@ -87,8 +86,7 @@ export default function Home() {
     */
   const connectWallet = async () => {
     try {
-      // Get the provider from web3Modal, which in our case is MetaMask
-      // When used for the first time, it prompts the user to connect their wallet
+    
       await getProviderOrSigner();
       setWalletConnected(true);
     } catch (err) {
@@ -103,8 +101,7 @@ export default function Home() {
     try {
       // We need a Signer here since this is a 'write' transaction.
       const signer = await getProviderOrSigner(true);
-      // Create a new instance of the Contract with a Signer, which allows
-      // update methods
+    
       const whitelistContract = new Contract(
         NFT_CONTRACT_ADDRESS,
         abi,
@@ -123,14 +120,10 @@ export default function Home() {
     }
   };
 
-  /**
-   * checkIfPresaleStarted: checks if the presale has started by quering the `presaleStarted`
-   * variable in the contract
-   */
+ 
   const checkIfPresaleStarted = async () => {
     try {
-      // Get the provider from web3Modal, which in our case is MetaMask
-      // No need for the Signer here, as we are only reading state from the blockchain
+  
       const provider = await getProviderOrSigner();
       // We connect to the Contract using a Provider, so we will only
       // have read-only access to the Contract
@@ -148,10 +141,7 @@ export default function Home() {
     }
   };
 
-  /**
-   * checkIfPresaleEnded: checks if the presale has ended by quering the `presaleEnded`
-   * variable in the contract
-   */
+ 
   const checkIfPresaleEnded = async () => {
     try {
       // Get the provider from web3Modal, which in our case is MetaMask
@@ -184,8 +174,7 @@ export default function Home() {
    */
   const getOwner = async () => {
     try {
-      // Get the provider from web3Modal, which in our case is MetaMask
-      // No need for the Signer here, as we are only reading state from the blockchain
+     
       const provider = await getProviderOrSigner();
       // We connect to the Contract using a Provider, so we will only
       // have read-only access to the Contract
@@ -256,9 +245,7 @@ export default function Home() {
     return web3Provider;
   };
 
-  // useEffects are used to react to changes in state of the website
-  // The array at the end of function call represents what state changes will trigger this effect
-  // In this case, whenever the value of `walletConnected` changes - this effect will be called
+
   useEffect(() => {
     // if wallet is not connected, create a new instance of Web3Modal and connect the MetaMask wallet
     if (!walletConnected) {
@@ -269,16 +256,14 @@ export default function Home() {
         providerOptions: {},
         disableInjectedProvider: false,
       });
-      // eslint-disable-next-line react-hooks/exhaustive-deps
       connectWallet();
 
-     // eslint-disable-next-line react-hooks/exhaustive-deps
+      // Check if presale has started and ended
       const _presaleStarted = checkIfPresaleStarted();
       if (_presaleStarted) {
-        // eslint-disable-next-line react-hooks/exhaustive-deps
         checkIfPresaleEnded();
       }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
+
       getTokenIdsMinted();
 
       // Set an interval which gets called every 5 seconds to check presale has ended
@@ -340,8 +325,8 @@ export default function Home() {
       return (
         <div>
           <div className={styles.description}>
-            Presale has started!!! If your address is whitelisted, Mint a NFT 🥳
-            
+            Presale has started!!! If your address is whitelisted, Mint a
+            Crypto Dev 🥳
           </div>
           <button className={styles.button} onClick={presaleMint}>
             Presale Mint 🚀
@@ -484,7 +469,7 @@ export default function Home() {
     </div>
   </div>
   <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-    <Image className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full" src="../background.png" alt=""/>
+    <img className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full" src="../background.png" alt=""/>
   </div>
  
 </div>
@@ -498,20 +483,18 @@ export default function Home() {
        
           wholeList.map((item,index)=>{
             return <div className="drop-shadow-10xl shadow-md shadow-white-300 mb-3 max-w-sm bg-white rounded-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
-            <div className="flex justify-end px-4 pt-4">
-               
-              
+            <div className="flex justify-end px-4 pt-4">             
                 
             </div>
             <div className="px-2 max-w-sm bg-white rounded-bl-4xl rounded-tr-4xl shadow-md dark:bg-gray-800 dark:border-gray-700">
     <a href="#">
-        <Image className="p-2 rounded-bl-3xl rounded-tr-3xl " src={item.image} alt="nft image" />
+        <img className="p-2 rounded-bl-3xl rounded-tr-3xl" src={item.image} alt="nft image" />
     </a>
     <div className="px-5">
         <a href="#">
-            <h5 className=" mb-3 text-center flex-center text-2xl font-semibold tracking-tight text-gray-900 dark:text-white"> key={item.song} {item.song}</h5>
-            <h6 className="text-center text-xl font-semibold tracking-tight text-orange-600">key={item.song} by {item.artist}</h6>
-            <h6 className="text-center text font- tracking-tight text-gray-900 dark:text-white">key={item.song} floor price: {item.price} eth</h6>
+            <h5 className=" mb-3 text-center flex-center text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">{item.song}</h5>
+            <h6 className="text-center text-xl font-semibold tracking-tight text-orange-600">by {item.artist}</h6>
+            <h6 className="text-center text font- tracking-tight text-gray-900 dark:text-white">Floor price: {item.price} eth</h6>
         </a>
        
         <div className="flex justify-between items-center">
