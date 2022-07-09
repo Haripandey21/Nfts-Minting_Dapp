@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Web3Modal from "web3modal";
 import { abi, NFT_CONTRACT_ADDRESS } from "../constants";
 import styles from "../styles/Home.module.css";
+import Image from 'next/image';
 
 export default function Home() {
   // walletConnected keep track of whether the user's wallet is connected or not
@@ -466,7 +467,7 @@ export default function Home() {
             <span className="block xl:inline">The new way to </span>
             <span className="block text-indigo-600 xl:inline">become a millionaire.  </span>
           </h1>
-          <p className="mt-3 text-base font-bold text-black-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">"If you don't have a digital asset make one by using NFT."</p>
+          <p className="mt-3 text-base font-bold text-black-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">"If you don&quott have a digital asset make one by using NFT."</p>
           <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
           <div className="rounded-md shadow">
               <a href="https://whitelist-dapp-bltts8jel-haripandey21.vercel.app/" className="w-full flex items-center justify-center px-6 py-2 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-2 md:text-lg md:px-11">Participate in Whitelist</a>
@@ -506,9 +507,9 @@ export default function Home() {
     </a>
     <div className="px-5">
         <a href="#">
-            <h5 className=" mb-3 text-center flex-center text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">{item.song}</h5>
-            <h6 className="text-center text-xl font-semibold tracking-tight text-orange-600">by {item.artist}</h6>
-            <h6 className="text-center text font- tracking-tight text-gray-900 dark:text-white">floor price: {item.price} eth</h6>
+            <h5 className=" mb-3 text-center flex-center text-2xl font-semibold tracking-tight text-gray-900 dark:text-white"> key={item.song} {item.song}</h5>
+            <h6 className="text-center text-xl font-semibold tracking-tight text-orange-600">key={item.song} by {item.artist}</h6>
+            <h6 className="text-center text font- tracking-tight text-gray-900 dark:text-white">key={item.song} floor price: {item.price} eth</h6>
         </a>
        
         <div className="flex justify-between items-center">
