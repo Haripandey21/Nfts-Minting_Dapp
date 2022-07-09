@@ -500,7 +500,7 @@ export default function Home() {
             </div>
             <div className="px-2 max-w-sm bg-white rounded-bl-4xl rounded-tr-4xl shadow-md dark:bg-gray-800 dark:border-gray-700">
     <a href="#">
-        <Image key={item.song}  className="p-2 rounded-bl-3xl rounded-tr-3xl" src={item.image} alt="nft image" />
+        <Image key={item.image}  className="p-2 rounded-bl-3xl rounded-tr-3xl" src={item.image} alt="nft image" />
     </a>
     <div className="px-5">
         <a href="#">
