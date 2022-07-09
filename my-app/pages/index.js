@@ -494,7 +494,7 @@ export default function Home() {
 
        
           wholeList.map((item,index)=>{
-            return <div className="drop-shadow-10xl shadow-md shadow-white-300 mb-3 max-w-sm bg-white rounded-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+            return <div  key={item.song} className="drop-shadow-10xl shadow-md shadow-white-300 mb-3 max-w-sm bg-white rounded-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
             <div className="flex justify-end px-4 pt-4">             
                 
             </div>
