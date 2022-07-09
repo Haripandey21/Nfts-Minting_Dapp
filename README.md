@@ -1,4 +1,4 @@
-## ---------------------------------------    LET'S MINT SOME NFTS   ---------------------------------
+## ---------------------------------------    LET'S MINT SOME NFTS   ----------------------
 <h2 align="center">
   <a href="#">
     <img src="https://readme-typing-svg.herokuapp.com?color=47FFB3&lines=Welcome+to+NFT+Minting+project!!&center=true&size=21" />
