@@ -122,29 +122,6 @@ export default function Home() {
 
 
 
-  /**
-   * getOwner: calls the contract to retrieve the owner
-   */
-  const getOwner = async () => {
-    try {
-     
-      const provider = await getProviderOrSigner();
-      // We connect to the Contract using a Provider, so we will only
-      // have read-only access to the Contract
-      const nftContract = new Contract(NFT_CONTRACT_ADDRESS, abi, provider);
-      // call the owner function from the contract
-      const _owner = await nftContract.owner();
-      // We will get the signer now to extract the address of the currently connected MetaMask account
-      const signer = await getProviderOrSigner(true);
-      // Get the address associated to the signer which is connected to  MetaMask
-      const address = await signer.getAddress();
-      if (address.toLowerCase() === _owner.toLowerCase()) {
-        setIsOwner(true);
-      }
-    } catch (err) {
-      console.error(err.message);
-    }
-  };
 
  
 
@@ -182,7 +159,41 @@ export default function Home() {
 
 
   useEffect(() => {
+
+    const connectWallet = async () => {
+      try {
+      
+        await getProviderOrSigner();
+        setWalletConnected(true);
+      } catch (err) {
+        console.error(err);
+      }
+    };
     
+      /**
+   * getOwner: calls the contract to retrieve the owner
+   */
+  const getOwner = async () => {
+    try {
+     
+      const provider = await getProviderOrSigner();
+      // We connect to the Contract using a Provider, so we will only
+      // have read-only access to the Contract
+      const nftContract = new Contract(NFT_CONTRACT_ADDRESS, abi, provider);
+      // call the owner function from the contract
+      const _owner = await nftContract.owner();
+      // We will get the signer now to extract the address of the currently connected MetaMask account
+      const signer = await getProviderOrSigner(true);
+      // Get the address associated to the signer which is connected to  MetaMask
+      const address = await signer.getAddress();
+      if (address.toLowerCase() === _owner.toLowerCase()) {
+        setIsOwner(true);
+      }
+    } catch (err) {
+      console.error(err.message);
+    }
+  };
+
     const checkIfPresaleStarted = async () => {
       try {
     
