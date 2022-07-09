@@ -358,6 +358,7 @@ export default function Home() {
   };
   const wholeList=[
     {
+      id:1,
       image :"nft1.png",
       artist :"Bored Ape Yacht Club",
       song :"#2987",
@@ -366,6 +367,7 @@ export default function Home() {
     
     },
     {
+      id:2,
       image :"nft2.png",
       artist :"Bored Ape Yacht Club",
       song : "#2892 ",
@@ -373,6 +375,7 @@ export default function Home() {
     
     },
     {
+      id:3,
       image :"nft3.png",
       artist :"Bored Ape Yacht Club",
       song : "#3021",
@@ -380,6 +383,7 @@ export default function Home() {
     
     },
     {
+      id:4,
       image :"nft4.png",
       artist :"Bored Ape Yacht Club",
       song :"#3092",
@@ -388,6 +392,7 @@ export default function Home() {
     
     },
     {
+      id:5,
       image :"nft5.png",
       artist :"Bored Ape Yacht Club",
       song : "#9232 ",
@@ -395,6 +400,7 @@ export default function Home() {
     
     },
     {
+      id:6,
       image :"nft6.png",
       artist :"Bored Ape Yacht Club",
       song : "#8922",
@@ -402,6 +408,7 @@ export default function Home() {
     
     },
     {
+      id:7,
       image :"nft7.png",
       artist :"Bored Ape Yacht Club",
       song :"#2322",
@@ -410,6 +417,7 @@ export default function Home() {
     
     },
     {
+      id:8,
       image :"nft8.png",
       artist :"Bored Ape Yacht Club",
       song : "#7675 ",
@@ -417,6 +425,7 @@ export default function Home() {
     
     },
     {
+      id:9,
       image :"nft9.png",
       artist :"Bored Ape Yacht Club",
       song : "#3453",
@@ -479,10 +488,11 @@ export default function Home() {
         </div>
       </main>
     </div>
+    <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+    <img className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full" src="../background.png" alt=""/>
   </div>
-  <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-    <Image className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full" src="../background.png" alt=""/>
   </div>
+ 
  
 </div>
 <div className="mt-10 text-center font-bold text-white ">
@@ -500,7 +510,7 @@ export default function Home() {
             </div>
             <div className="px-2 max-w-sm bg-white rounded-bl-4xl rounded-tr-4xl shadow-md dark:bg-gray-800 dark:border-gray-700">
     <a href="#">
-        <Image key={item.image}  className="p-2 rounded-bl-3xl rounded-tr-3xl" src={item.image} alt="nft image" />
+        <img key={item.image}  className="p-2 rounded-bl-3xl rounded-tr-3xl" src={item.image} alt="nft image" />
     </a>
     <div className="px-5">
         <a href="#">
