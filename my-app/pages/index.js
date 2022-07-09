@@ -269,14 +269,16 @@ export default function Home() {
         providerOptions: {},
         disableInjectedProvider: false,
       });
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       connectWallet();
 
-      // Check if presale has started and ended
+     // eslint-disable-next-line react-hooks/exhaustive-deps
       const _presaleStarted = checkIfPresaleStarted();
       if (_presaleStarted) {
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         checkIfPresaleEnded();
       }
-
+        // eslint-disable-next-line react-hooks/exhaustive-deps
       getTokenIdsMinted();
 
       // Set an interval which gets called every 5 seconds to check presale has ended
@@ -295,7 +297,7 @@ export default function Home() {
         await getTokenIdsMinted();
       }, 5 * 1000);
     }
-  }, []);
+  }, [walletConnected]);
 
   /*
       renderButton: Returns a button based on the state of the dapp
