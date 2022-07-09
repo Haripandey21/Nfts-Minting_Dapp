@@ -481,7 +481,7 @@ export default function Home() {
     </div>
   </div>
   <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-    <img className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full" src="../background.png" alt=""/>
+    <Image className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full" src="../background.png" alt=""/>
   </div>
  
 </div>
@@ -500,12 +500,12 @@ export default function Home() {
             </div>
             <div className="px-2 max-w-sm bg-white rounded-bl-4xl rounded-tr-4xl shadow-md dark:bg-gray-800 dark:border-gray-700">
     <a href="#">
-        <img className="p-2 rounded-bl-3xl rounded-tr-3xl" src={item.image} alt="nft image" />
+        <Image key={item.song}  className="p-2 rounded-bl-3xl rounded-tr-3xl" src={item.image} alt="nft image" />
     </a>
     <div className="px-5">
         <a href="#">
-            <h5 className=" mb-3 text-center flex-center text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">{item.song}</h5>
-            <h6 className="text-center text-xl font-semibold tracking-tight text-orange-600">by {item.artist}</h6>
+            <h5  className=" mb-3 text-center flex-center text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">{item.song}</h5>
+            <h6  className="text-center text-xl font-semibold tracking-tight text-orange-600">by {item.artist}</h6>
             <h6 className="text-center text font- tracking-tight text-gray-900 dark:text-white">Floor price: {item.price} eth</h6>
         </a>
        
